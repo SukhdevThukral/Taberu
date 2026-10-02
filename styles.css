@@ -39,6 +39,7 @@ body.landing{
 .hero{
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 80px 40px;
 }
@@ -69,4 +70,33 @@ body.landing{
     color: #e63232;
     font-style: italic;
     transition: opacity 0.5s ease;
+}
+
+.heroSub {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.enterBtn {
+    display: inline-block;
+    padding: 20px 50px;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    border-radius: 10px;
+}
+
+.enterBtn:hover{
+    background: #e63232;
+}
+
+.landingFooter {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    color: #e63232;
+    border-top: 1px solid #d9b8e8;
 }
