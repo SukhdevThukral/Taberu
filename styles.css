@@ -49,7 +49,9 @@ body.landing{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
 }
 
 .tagline {
