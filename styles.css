@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.landing{
+    background-color: #f9daff;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.TaberuLogo{
+    height: 40px;
+}
+
+.navItems{
+    display: flex;
+    gap: 30px;
+}
+
+.navItems a {
+    color: ;
+}
