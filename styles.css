@@ -10,10 +10,19 @@ body.landing{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    color: #1a1a1a;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #d9b8e8;
 }
 
 .TaberuLogo{
-    height: 40px;
+    height: 36px;
 }
 
 .navItems{
