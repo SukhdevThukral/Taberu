@@ -102,3 +102,35 @@ body.landing{
     color: #e63232;
     border-top: 1px solid #d9b8e8;
 }
+
+body.page{
+    background-color: #f9daff;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+}
+
+.pageHeader{
+    text-align: center;
+    padding: 50px 40px 20px;
+}
+
+.pageHeader h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.pageHeader p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.filterBar{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
