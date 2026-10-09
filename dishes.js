@@ -10,3 +10,28 @@ const dishes = [
     {name: 'tempura', cat: 'street', desc:'seafood and vegetables dipped in a light, airy batter and deep-fried to crisp perfection', region: 'kanto'},
     {name: 'gyoza', cat: 'street', desc:'pan-fried dumplings filled with minced pork, cabbage, garlic, and ginger, featuring a crispy bottom and tender steamed top.', region: 'hamamastu'},
 ];
+
+let active = 'all';
+
+function renderingDishes(cat){
+    const grid = document.getElementById('dishGrid');
+    const filterd = cat === 'all' ? dishes : dishes.filter(d=> d.cat === cat);
+    grid.innerHTML = filterd.map(d=> `
+            <div class="dishCard">
+                <div class="dishEmoji">${d.emoji}</div>
+                <h3> ${d.name}</h3>
+                <p class="dishDesc"> ${d.desc}</p>
+                <span class="dishRegion">${d.region}</div>
+            </div>`).join('');
+}
+
+document.querySelectorAll('.filterBtn').forEach(btn=> {
+    btn.addEventListener('click',()=> {
+        document.querySelectorAll('.filterBtn').forEach(b=> b.classList.remove('active'));
+        btn.classList.add('active');
+        active=btn.dataset.cat;
+        renderingDishes(active);
+    });
+})
+
+renderingDishes('all');
