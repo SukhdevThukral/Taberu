@@ -183,7 +183,7 @@ body.page{
 }
 
 .dishRegion {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #e63232;
     font-style: italic;
 }
@@ -194,4 +194,5 @@ body.page{
     font-size: 0.8rem;
     color: #aaa;
     border-top: 1px solid #d9b8e8;
+    margin-top: auto;
 }
