@@ -21,7 +21,7 @@ function renderingDishes(cat){
                 <div class="dishEmoji">${d.emoji}</div>
                 <h3> ${d.name}</h3>
                 <p class="dishDesc"> ${d.desc}</p>
-                <span class="dishRegion">${d.region}</div>
+                <span class="dishRegion">${d.region}</span>
             </div>`).join('');
 }   
 
