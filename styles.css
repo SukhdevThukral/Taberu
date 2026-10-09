@@ -134,3 +134,50 @@ body.page{
     gap: 10px;
     flex-wrap: wrap;
 }
+
+.filterBtn{
+    padding: 8px 20px;
+    border: 1px solid #1a1a1a;
+    background: transparent;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.filterBtn:hover, .filterBtn.active {
+    background: #1a1a1a;
+    color: white;
+}
+
+.dishGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.dishCard{
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.dishCard h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.dishDesc{
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
