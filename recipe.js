@@ -1,3 +1,7 @@
+
+
+
+
 const params = new URLSearchParams(window.location.search);
 const dish = params.get('dish');
 const output = document.getElementById('recipeOutput');
@@ -25,7 +29,7 @@ async function createRecipe(dish){
         "difficulty" : "easy" | "medium" | "hard",
         "time": "e.g. 30 mins",
         "desc": "one sentence about the dish",
-        "ingrediens": ["ingredient 1", "ingredient 2", ....],
+        "ingredients": ["ingredient 1", "ingredient 2", ....],
         "steps" : ["step 1", "step 2", ....]
     }
 
@@ -35,7 +39,10 @@ async function createRecipe(dish){
     try{
         const response = await fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST', 
-            headers: {'Content-Type':'application/json'},
+            headers: {
+                'Content-Type':'application/json',
+                
+            },
             body: JSON.stringify({
                 model: 'claude-sonnet-4-6',
                 max_tokens: 1000,
