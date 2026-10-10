@@ -1,4 +1,27 @@
+function getKey(){
+    return localStorage.getItem('taberu_api_key');
+}
 
+function promptKey(){
+    return new Promise((resolve) => {
+        const modal  = document.getElementById('keyModal');
+        const input = document.getElementById('keyInput');
+        const btn = document.getElementById('keySaveBtn');
+
+        modal.style.display = 'flex';
+
+        btn.addEventListener('click', () => {
+            const key = input.value.trim();
+            if (key.startsWith('sk-ant-')) {
+                localStorage.setItem('taberu_api_key', key);
+                modal.style.display = 'none';
+                resolve(key);
+            }else{
+                input.style.borderColor = 'red';
+            }
+        });
+    });
+}
 
 
 
@@ -17,6 +40,12 @@ if (!dish) {
 }
 
 async function createRecipe(dish){
+
+    let key = getKey();
+    if(!key) {
+        key = await promptKey();
+    }
+
     const prompt = `
     You are japanese cooking helper for a site called Taberu.
 
@@ -41,7 +70,9 @@ async function createRecipe(dish){
             method: 'POST', 
             headers: {
                 'Content-Type':'application/json',
-                
+                'x-api-key': key,
+                'anthropic-version': '2023-06-01',
+                'anthropic-dangerous-direct-browser-access': 'true'
             },
             body: JSON.stringify({
                 model: 'claude-sonnet-4-6',
@@ -51,9 +82,20 @@ async function createRecipe(dish){
         });
 
         const data = await response.json();
+
+        if(data.error){
+            localStorage.removeItem('taberu_api_key');
+            output.innerHTML = `
+            <p class="loadingMsg">
+                bad api key ;(
+                <a href="recipe.html?dish=${encodeURIComponent(dish)}">try again</a>
+            </p> 
+            `;
+            return;
+        }
+
         const r = JSON.parse(data.content[0].text.trim());
         renderRecipe(r);
-
 
     } catch (err){
         output.innerHTML=`
