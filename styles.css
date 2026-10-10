@@ -189,11 +189,36 @@ body.page{
     font-style: italic;
 }
 
-.pageFooter{
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #aaa;
-    border-top: 1px solid #d9b8e8;
-    margin-top: auto;
+.recipeGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 40px;
+    width: 100%;
 }
+
+.recipeCard{
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #d9b8e8;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipeEmoji {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.recipeCard h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+    
