@@ -1,4 +1,4 @@
-const grid = document.getElementById('dishGrid');
+const grid = document.getElementById('recipeGrid');
 
 grid.innerHTML = dishes.map(d => `
         <a class="dishCard dishCardLink" href="recipe.html?dish=${encodeURIComponent(d.name)}">
