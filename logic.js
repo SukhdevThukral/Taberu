@@ -8,7 +8,7 @@ setInterval(() => {
     elem.style.opacity = '0';
     setTimeout(() => {
         i = (i+1) % rotatingDishes.length;
-        elem.textContent = dishes[i];
+        elem.textContent = rotatingDishes[i];
         elem.style.opacity = '1'
     },300);
 },2000)
