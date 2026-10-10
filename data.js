@@ -8,5 +8,5 @@ const dishes = [
     {name: 'yakitori', cat: 'street', emoji: '🍡', desc:'skewered chicken pieces grilled over charcoal and basted with savory tare sauce or salt.', region: 'nationwide'},
     {name: 'miso soup', cat: 'soup', emoji: '🍵', desc:'traditional, comforting broth made of dashi stock mixed with fermented soybean paste (miso), typically containing tofu and seaweed', region: 'nationwide'},
     {name: 'tempura', cat: 'street', emoji: '🦐', desc:'seafood and vegetables dipped in a light, airy batter and deep-fried to crisp perfection', region: 'kanto'},
-    {name: 'gyoza', cat: 'street', emoji: '🍜🥟', desc:'pan-fried dumplings filled with minced pork, cabbage, garlic, and ginger, featuring a crispy bottom and tender steamed top.', region: 'hamamastu'},
+    {name: 'gyoza', cat: 'street', emoji: '🍜🥟', desc:'pan-fried dumplings filled with minced pork, cabbage, garlic, and ginger, featuring a crispy bottom and tender steamed top.', region: 'hamamatsu'},
 ];
