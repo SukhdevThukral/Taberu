@@ -47,7 +47,7 @@ async function createRecipe(dish){
         const r = JSON.parse(data.content[0].text.trim());
         renderRecipe(r);
 
-        
+
     } catch (err){
         output.innerHTML=`
         <p class="loadingMsg">
@@ -62,11 +62,11 @@ function renderRecipe(r){
     output.innerHTML = `
     <div class="recipeHero">
         <div class="recipeHeroEmoji">${r.emoji}</div>
-        <h1 class="recipeHeroTitle">${r.name}</div>
+        <h1 class="recipeHeroTitle">${r.name}</h1>
         <p class="recipeHeroDesc">${r.desc}</p>
         <div class="recipeHeroMeta">
             <span>${r.time}</span>
-            <span class="difficultyBadge">${r.diff}</span>
+            <span class="difficultyBadge">${r.difficulty}</span>
         </div>
     </div>
 
