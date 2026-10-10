@@ -208,6 +208,13 @@ body.page{
     flex-direction: column;
 }
 
+.recipeCardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
 .recipeEmoji {
     font-size: 2rem;
     margin-bottom: 8px;
