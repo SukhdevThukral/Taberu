@@ -53,8 +53,8 @@ async function createRecipe(dish){
 
     respon ONLY with a json object, no markdown, no explanation, and shape should be:
     {
-        "name": "dish name"
-        "emoji": "single emoji"
+        "name": "dish name",
+        "emoji": "single emoji",
         "difficulty" : "easy" | "medium" | "hard",
         "time": "e.g. 30 mins",
         "desc": "one sentence about the dish",
@@ -66,22 +66,21 @@ async function createRecipe(dish){
     `;
 
     try{
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
             method: 'POST', 
             headers: {
                 'Content-Type':'application/json',
-                'x-api-key': key,
-                'anthropic-version': '2023-06-01',
-                'anthropic-dangerous-direct-browser-access': 'true'
+                'Authorization': `Bearer ${key}`
             },
             body: JSON.stringify({
-                model: 'claude-sonnet-4-6',
+                model: 'claude-haiku-5-5',
                 max_tokens: 1000,
                 messages: [{role:'user', content:prompt}]
             })
         });
 
         const data = await response.json();
+        console.log('raw response:', data)
 
         if(data.error){
             localStorage.removeItem('taberu_api_key');
@@ -98,6 +97,8 @@ async function createRecipe(dish){
         renderRecipe(r);
 
     } catch (err){
+        console.error('parse error:', err);
+        console.log('raw response: ', data);
         output.innerHTML=`
         <p class="loadingMsg">
             something went wrong :(
