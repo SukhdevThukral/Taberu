@@ -1,6 +1,8 @@
+# TABERU (食べる) - to eat
+
+
 >_a small static website for exploring japanese cuisine (im sorry i couldnt think of anythg else D: )._
 
-<br/>
 
 ## what ts is
 
@@ -34,6 +36,9 @@ uh to forget the key (i.e if you exhaust your credits :D): simply run `localStor
 ## assets (how can i even forget)
 
 this was my first time trying to make a logo than drawing stuff so i found it quite interesting and yes ik its shit but i tried to add my own touch to it D:
+
+<img width="600" height="300" alt="Frame 1" src="https://github.com/user-attachments/assets/6f339711-fb69-4675-b4c2-549006ca3103" />
+
 
 
 
