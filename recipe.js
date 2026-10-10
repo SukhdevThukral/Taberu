@@ -12,7 +12,7 @@ function promptKey(){
 
         btn.addEventListener('click', () => {
             const key = input.value.trim();
-            if (key.startsWith('sk-ant-')) {
+            if (key.startsWith('sk-or-')) {
                 localStorage.setItem('taberu_api_key', key);
                 modal.style.display = 'none';
                 resolve(key);
@@ -70,16 +70,16 @@ async function createRecipe(dish){
             method: 'POST', 
             headers: {
                 'Content-Type':'application/json',
-                'Authorization': `Bearer ${key}`
+                'Authorization': `Bearer ${key}`,
             },
             body: JSON.stringify({
-                model: 'claude-haiku-5-5',
-                max_tokens: 1000,
+                model: 'nvidia/nemotron-3-super-120b-a12b:free',
                 messages: [{role:'user', content:prompt}]
             })
         });
 
         const data = await response.json();
+        console.log('full data:', JSON.stringify(data));
         console.log('raw response:', data)
 
         if(data.error){
@@ -93,12 +93,13 @@ async function createRecipe(dish){
             return;
         }
 
-        const r = JSON.parse(data.content[0].text.trim());
+        let text = data.choices[0].message.content.trim();
+        text = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+        const r = JSON.parse(text);
         renderRecipe(r);
 
     } catch (err){
         console.error('parse error:', err);
-        console.log('raw response: ', data);
         output.innerHTML=`
         <p class="loadingMsg">
             something went wrong :(
